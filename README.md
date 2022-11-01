@@ -30,7 +30,7 @@ If the plugin is in another folder, you should copy it here.
 ## Install the Plugin
 
 Open Unreal Editor. Click Edit -> Plugins to open the plugin window.
-Search for TopDownRTSTemplate and put a check mark at it.
+Search for SwarmSimulator and put a check mark at it.
 
 ## Import Keyboard Settings
 
