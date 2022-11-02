@@ -32,13 +32,16 @@ If the plugin is in another folder, you should copy it here.
 Open Unreal Editor. Click Edit -> Plugins to open the plugin window.
 Search for SwarmSimulator and put a check mark at it.
 
-## Import Keyboard Settings
+## Import Settings
 
-__You can download DefaultInput.ini and SwarmSettings.ini from here from github by clicking on top left Code->Download Zip__
+Document/Inputs/Gameplay_Debugger_Backup_2022-11-02_080527_SwarmSimulator.ini
+Document/Inputs/Input_Backup_2022-11-01_200303_SwarmSimulator.ini
+Document/Inputs/Maps_&_Modes_Backup_2022-11-02_074806_SwarmSimulator.ini
 
-Open Unreal Editor. Go to Edit -> Project Settings -> AISystem (on left navigation) -> Import.
-Choose SwarmSettings.ini from:
-C:\Program Files\Epic Games\UE_5.0\Engine\Plugins\SwarmSimulator\Document\Inputs
+__You can download Gameplay_Debugger_Backup_2022-11-02_080527_SwarmSimulator.ini and Input_Backup_2022-11-01_200303_SwarmSimulator.ini and Maps_&_Modes_Backup_2022-11-02_074806_SwarmSimulator.ini from here from github by clicking on top left Code->Download Zip__
+
+Open Unreal Editor. Go to Edit -> Project Settings -> Search for the Specific Input Section: Gameplay Debugger, Input, Maps & Modes
+and import the .ini file
 
 __or download from github__
 
