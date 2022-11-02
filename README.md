@@ -8,14 +8,14 @@ Gameplay Preview:
 For Questions you can write to info@teufel-engineering.com
 If you find any Issues or Bugs i appreciate your Mail!
 
-!!! You can Disable BeginPlay and Tick of my ParentClasses with setting !!!
+!!! You can Disable BeginPlay and Tick of my Parent Classes with setting !!!
 
 bool DisableTick = true;
 bool DisableBegin = true;
 
 In Blueprint Constructor-Skript. So you are able to use all my Functions and Propertys.
 
-Or you just overwrite the Tick, if you use my Parent-Classes.
+Or you just overwrite the Tick, if you use my Parent Classes.
 
 ## Download the Plugin
 
