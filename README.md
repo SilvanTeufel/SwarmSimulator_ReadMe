@@ -61,7 +61,7 @@ This Blueprints use the Parent Classes from SwarmSimulator Plugin, which you can
 	
 ## Parent Classes
 
-If TopDownRTSTemplate is installed the Classes can be used as Parent Class in Blueprint, so all functions from this Class are available.
+If SwarmSimulator is installed the Classes can be used as Parent Class in Blueprint, so all functions from this Class are available.
 Just use one of the following Classes as Parent Class and or just choose them in your GameMode Blueprint. Category = SwarmSimulator. 
 
 Parentclasses are:
