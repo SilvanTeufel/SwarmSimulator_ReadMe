@@ -15,6 +15,8 @@ bool DisableBegin = true;
 
 In Blueprint Constructor-Skript. So you are able to use all my Functions and Propertys.
 
+Or you just overwrite the Tick, if you use my Parent-Classes.
+
 ## Download the Plugin
 
 !!! LINK HERE SOON !!!
