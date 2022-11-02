@@ -87,6 +87,34 @@ For ControllerBase, if you want to use the Controller, you have to adapt your Se
 ---
 
 Here is a List of the Classes and there Functions:
+(All Variables and Functions are accessible via Blueprint - BlueprintReadWrite or EditAnywhere or Both.)
+
+### Class - MouseBotBase
+
+```
+
+AMouseBotBase();
+class UCapsuleComponent* TriggerCapsule;
+void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
+void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+virtual void BeginPlay() override;
+virtual void Tick(float DeltaTime) override;
+virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+void KillBot();
+void SetAnimState(TEnumAsByte<BotStatus> NewCharAnimState);
+TEnumAsByte<BotStatus> GetAnimState();
+TEnumAsByte<BotStatus> CharAnimState;
+FVector MoveToLocation;
+AEnemyBase* CurrentEnemy;
+bool AttackBottom = false;
+float AttackIterationTime = 0.f;
+float AttackDamage = 1.f;
+float DeathTime = 0.f;
+bool HealBottom = false;
+float HealIterationTime = 0.f;
+float HealPoints = 1.f;
+```
+
 
 ### Class - EnemyBase
 
@@ -124,7 +152,6 @@ float DeathTimer = 0;
 bool DestroyAfterDeath = false;
 ```
 
-// Hier weiter
 ### Class - CameraBase
 
 ```
@@ -272,43 +299,18 @@ void ShowControlWidget();
 ### Class - HUDBase
 
 ```
-virtual void DrawHUD();
-- Used in Tick() to Draw the Selectionfield and trigger select.
-
-FVector2D InitialPoint;
-- Position of mouse on screen when pressed;
-
-FVector2D CurrentPoint;
-- Position of mouse on screen while holding;
-
+virtual void DrawHUD(); // used in Tick();
+void Tick(float DeltaSeconds);
+void BeginPlay() override;
+FVector2D InitialPoint; // Position of mouse on screen when pressed;
+FVector2D CurrentPoint; // Position of mouse on screen while holding;
 float RectangleScaleSelectionFactor = 0.9;
-- Factor of inner/outer selection field
-
 FVector2D GetMousePos2D();
-- Functionality is defined by Functionname
-
-void AimToMouse();
-- Actors can be triggert to Look to the Mouse
-
-void MoveActorsThroughWayPoints(TArray <ATopDownExampleCharacter\*> Actors);
-- Move Actors through Waypoints
-
-void StartMovingActors(TArray<ATopDownExampleCharacter\*> Actors);
-- Start Move Actors.
-
-void setZeroActor(ACharacterBase* Actor);
-- Functionality is defined by Functionname
-
-bool bStartSelecting = false;
-TArray <ACharacterBase\*> FoundActors;
-
-bool bStartSelectingEnemys = false;
-
-TArray <ACharacterBase*> FoundCharacters;
-
 TArray <AEnemyBase*> FoundEnemys;
-
+TArray <AMouseBotBase*> FoundMouseBots;
+void RemoveMouseBot(AMouseBotBase* MouseBotBase);
 bool DisableTick = false;
+bool CharacterIsUnSelectable = false;
 ```
 ---
 
@@ -394,18 +396,11 @@ float bIsPlayerDetected = false;
 float DistanceToPlayer = 0.0f;
 float DistanceToWaypoint = 0.0f;
 float SprintTime = 0.0f;
-ACharacterBase* ActorToChase;
+AMouseBotBase* BotToAttack;
+float ChanceToAttackABot = 35.0f;
+void OnPawnDetected(const TArray<AActor*>& DetectedPawns);
+AMouseBotBase* ActorToChase;
+
 ```
 
-### Class - EnemyControllerBase
 
-```
-
-AUIWeaponIndicator();
-USkeletalMeshComponent* WeaponMesh;
-virtual void BeginPlay() override;
-virtual void Tick(float DeltaTime) override;
-void ChangeWeaponIndicator(class USkeletalMesh* NewWeaponMesh);
-FVector WeaponIndicatorPosition = FVector(-500.f, 400.0f, -290.0f); 		// Choose Position of the Weapon Indicator
-FRotator WeaponIndicatorRotation = FRotator(-45.f, 0.0f, 0.f); 			// Choose Rotation of the Weapon Indicator
-```
