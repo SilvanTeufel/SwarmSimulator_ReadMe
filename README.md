@@ -45,14 +45,7 @@ __You can download Gameplay_Debugger_Backup_2022-11-02_080527_SwarmSimulator.ini
 Open Unreal Editor. Go to Edit -> Project Settings -> Search for the Specific Input Section: Gameplay Debugger, Input, Maps & Modes
 and import the .ini file
 
-__or download from github__
-
-Repeat this step with DefaultInput.ini .
-Open Unreal Editor. Go to Edit -> Project Settings -> Input (on left navigation) -> Import.
-
-If the keybindings are not working you can check the pictures in:
-C:\Program Files\Epic Games\UE_5.0\Engine\Plugins\SwarmSimulator\Document\Inputs
-and create the keybindings by yourself
+You can also find the .ini files in the Plugin Folder "All\Engine\Plugins\SwarmSimulator\Document\Input
 
 ## Test Example Map
 
@@ -69,7 +62,7 @@ This Blueprints use the Parent Classes from SwarmSimulator Plugin, which you can
 ## Parent Classes
 
 If TopDownRTSTemplate is installed the Classes can be used as Parent Class in Blueprint, so all functions from this Class are available.
-Just use one of the following Classes as Parent Class and or just choose them in your GameMode Blueprint. Category = TopDownRTSTemplate. 
+Just use one of the following Classes as Parent Class and or just choose them in your GameMode Blueprint. Category = SwarmSimulator. 
 
 Parentclasses are:
 
