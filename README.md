@@ -8,7 +8,7 @@ Gameplay Preview:
 For Questions you can write to info@teufel-engineering.com
 If you find any Issues or Bugs i appreciate your Mail!
 
-!!! You can Disable BeginPlay and Tick of my Parent Classes with setting !!!
+You can Disable BeginPlay and Tick of my Parent Classes with setting:
 
 bool DisableTick = true;
 bool DisableBegin = true;
