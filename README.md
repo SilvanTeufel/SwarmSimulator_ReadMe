@@ -84,6 +84,34 @@ For ControllerBase, if you want to use the Controller, you have to adapt your Se
 Here is a List of the Classes and there Functions:
 (All Variables and Functions are accessible via Blueprint - BlueprintReadWrite or EditAnywhere or Both.)
 
+## Create a Blueprint from Parent Classes
+
+1. Right Click inside the Content Browser inside the Unreal Editor -> Create Blueprint
+2. Go to "ALL CLASSES" Section and Time the Name of the Class inside the Search
+3. Click on Select
+
+Character Setup
+1. For Character choose a Skeletal Mesh and a Animation Blueprint (there are Example Animation Blueprints in the Blueprint Folder All\Engine\Plugins\SwarmSimulator\Content\SwarmSimulator\Blueprints\Animations)
+2. Adapt the Trigger Capsule to the Mesh
+3. If you need a new Animation Blueprint for your Mesh Create it -> Right Click -> Animations -> Animation Blueprint
+4. Copy the Statemachine from my Example Animations Blueprints (All\Engine\Plugins\SwarmSimulator\Content\SwarmSimulator\Blueprints\Animations)
+5. Go through all States and change the Animation.
+6. Check if the Transition Rules are Setup Correctly. If not you can easily choose the right state from a dropdown.
+7. Check Details of the Blueprint by Typing SwarmSimulator in the Search.
+8. Use Functions and Variables in EvenGraph and Construction Script.
+
+GameMode/HUD/Actor Setup
+1. Create a Blueprint like mentioned above.
+2. Type "SwarmSimulator" in Search Details.
+3. Use Functions and Variables in EvenGraph and Construction Script.
+
+Widget Setup
+1. Widgets have to be choosen inside the Blueprints of a Character
+2. Example Widgets are at (All\Engine\Plugins\SwarmSimulator\Content\SwarmSimulator\Blueprints\Widgets)
+3. Example Character with choosen Widgets can be found at (All\Engine\Plugins\SwarmSimulator\Content\SwarmSimulator\Blueprints\Character)
+4. Widget hast to been set Space "Screen" and Draw at Desired Size to true
+5. Widget Class has to choose a Blueprint
+
 ### Class - MouseBotBase
 
 ```
