@@ -1,6 +1,6 @@
 Copyright 2022 Silvan Teufel / Teufel-Engineering.com All Rights Reserved.
 
-# TopDownRTSTemplate - Readme - 2022
+# SwarmSimulator - Readme - 2022
 
 Gameplay Preview:
 
