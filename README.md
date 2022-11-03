@@ -152,20 +152,20 @@ float SlowWalkspeed = 200.f; 			- Is used when Moving from one Waypoint to anoth
 float AttackTime = 0.0f; 			- Is used in Controller Statemachine 
 float AttackPauseTime = 0.0f; 			- In Pause state: ActualCharacter->AttackPauseTime = (ActualCharacter->AttackPauseTime + DeltaSeconds)
 float GetAttackedTime = 0.0f; 			- if (ActualCharacter->GetAttackedTime > EnemyIsAttackedTime) State is changing  // EnemyIsAttackedTime is in EnemyController
-class AWaypoint* NextWaypoint; 			- The Waypoint where the Character moves to
-void SetWaypoint(class AWaypoint* NewNextWaypoint); - With this Function you can set the Waypoint
-void SetAnimState(TEnumAsByte<AiStatus> NewCharAnimState);  - Set the Animation State
-TEnumAsByte<AiStatus> GetAnimState(); - Get the Animation State
-TEnumAsByte<AiStatus> CharAnimState; - This state is used in the Animation State Machine
-AActor* ActorToChase; // A Pointer to the Character (Mousebot) which the AI Chases
-float GetHealth(); // Get the Health of the Character
-void SetHealth(float NewHealth); // Set the Health of the Character
-float GetMaxHealth(); // What can this be?
-class UWidgetComponent* HealthWidgetComp; // You have to choose a HealthWidget in the Blueprint, when creating a Blueprint from this Class.
-float Health; // Change the Value in BP.
-float MaxHealth = 120; // Change the Value in BP.
-float DeathTimer = 0; // Is used in Statemachine when Character is Dead. After X Seconds the Despawn occurs.
-bool DestroyAfterDeath = false; // You can set to true, but better set to false if you use my ComponenGeneratorGameMode to Spawn them. Otherwise it will crash.
+class AWaypoint* NextWaypoint; 					- The Waypoint where the Character moves to
+void SetWaypoint(class AWaypoint* NewNextWaypoint); 		- With this Function you can set the Waypoint
+void SetAnimState(TEnumAsByte<AiStatus> NewCharAnimState);  	- Set the Animation State
+TEnumAsByte<AiStatus> GetAnimState(); 	- Get the Animation State
+TEnumAsByte<AiStatus> CharAnimState; 	- This state is used in the Animation State Machine
+AActor* ActorToChase; 			- A Pointer to the Character (Mousebot) which the AI Chases
+float GetHealth(); 			- Get the Health of the Character
+void SetHealth(float NewHealth); 	- Set the Health of the Character
+float GetMaxHealth(); 				- What can this be?
+class UWidgetComponent* HealthWidgetComp; 	- You have to choose a HealthWidget in the Blueprint, when creating a Blueprint from this Class.
+float Health; 					- Change the Value in BP.
+float MaxHealth = 120; 				- Change the Value in BP.
+float DeathTimer = 0; 				- Is used in Statemachine when Character is Dead. After X Seconds the Despawn occurs.
+bool DestroyAfterDeath = false; 		- You can set to true, but better set to false if you use my ComponenGeneratorGameMode to Spawn them. Otherwise it will crash.
 ```
 
 ### Class - CameraBase
