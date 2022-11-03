@@ -119,21 +119,21 @@ Widget Setup
 
 AMouseBotBase();
 class UCapsuleComponent* TriggerCapsule;
-void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult); // The Overlap is Triggering the Attack -> MouseBot attacks EnemyBase
+void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult); - The Overlap is Triggering the Attack -> MouseBot attacks EnemyBase
 void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex); 
 virtual void BeginPlay() override;
 virtual void Tick(float DeltaTime) override;
 virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 void KillBot();
-void SetAnimState(TEnumAsByte<BotStatus> NewCharAnimState); // Set the Animstate BotStatus (ENUM) of the Character
-TEnumAsByte<BotStatus> GetAnimState(); // Get the current AnimState
-TEnumAsByte<BotStatus> CharAnimState; // AnimState is saved here. Animation State Machine is using CharAnimState
-FVector MoveToLocation; // This is used to Navigate the Character while Animation State is Run
-AEnemyBase* CurrentEnemy; // This is the Pointer to the Enemy when the overlap started.
-bool AttackBottom = false; // This is used in the Statemachine while the Bot attacks it goes from Top to Bottom. (Depending on Box size of the Enemy)
-float AttackIterationTime = 0.f; // Is used in Statemachine
-float AttackDamage = 1.f; // This can be set to another Value, its the Damage which a Bot is doing when attacking once.
-float DeathTime = 0.f; // This Time is used in Statemachine
+void SetAnimState(TEnumAsByte<BotStatus> NewCharAnimState); - Set the Animstate BotStatus (ENUM) of the Character
+TEnumAsByte<BotStatus> GetAnimState(); 	- Get the current AnimState
+TEnumAsByte<BotStatus> CharAnimState; 	- AnimState is saved here. Animation State Machine is using CharAnimState
+FVector MoveToLocation; 		- This is used to Navigate the Character while Animation State is Run
+AEnemyBase* CurrentEnemy; 		- This is the Pointer to the Enemy when the overlap started.
+bool AttackBottom = false;		- This is used in the Statemachine while the Bot attacks it goes from Top to Bottom. (Depending on Box size of the Enemy)
+float AttackIterationTime = 0.f; 	- Is used in Statemachine
+float AttackDamage = 1.f; 		- This can be set to another Value, its the Damage which a Bot is doing when attacking once.
+float DeathTime = 0.f; 			- This Time is used in Statemachine
 ```
 
 
@@ -143,20 +143,20 @@ float DeathTime = 0.f; // This Time is used in Statemachine
 public:
 AEnemyBase(const FObjectInitializer& ObjectInitializer);
 class UCapsuleComponent* TriggerCapsule;
-virtual void BeginPlay() override; // Set HealthWidget Location and Character Mesh.
-bool DisableBeginPlay = false; // If set to true Begin Play will not run.
-void isAttacked(AActor* AttackingCharacter); // AActor* SelectedCharacter.
-void setWalkSpeed(float Speed); // Is Used and can be used to set Walkspeed.
-float NormalWalkspeed = 400.f; // Is Walkspeed when running through a Mousebot for example.
-float SlowWalkspeed = 200.f; // Is used when Moving from one Waypoint to another.	
-float AttackTime = 0.0f; // Is used in Controller Statemachine 
-float AttackPauseTime = 0.0f; / In Pause state: ActualCharacter->AttackPauseTime = (ActualCharacter->AttackPauseTime + DeltaSeconds)
-float GetAttackedTime = 0.0f; // if (ActualCharacter->GetAttackedTime > EnemyIsAttackedTime) State is changing  // EnemyIsAttackedTime is in EnemyController
-class AWaypoint* NextWaypoint; // The Waypoint where the Character moves to
-void SetWaypoint(class AWaypoint* NewNextWaypoint); // With this Function you can set the Waypoint
-void SetAnimState(TEnumAsByte<AiStatus> NewCharAnimState);  // Set the Animation State
-TEnumAsByte<AiStatus> GetAnimState(); // Get the Animation State
-TEnumAsByte<AiStatus> CharAnimState; // This state is used in the Animation State Machine
+virtual void BeginPlay() override; 		- Set HealthWidget Location and Character Mesh.
+bool DisableBeginPlay = false; 			- If set to true Begin Play will not run.
+void isAttacked(AActor* AttackingCharacter); 	- AActor* SelectedCharacter.
+void setWalkSpeed(float Speed); 		- Is Used and can be used to set Walkspeed.
+float NormalWalkspeed = 400.f; 			- Is Walkspeed when running through a Mousebot for example.
+float SlowWalkspeed = 200.f; 			- Is used when Moving from one Waypoint to another.	
+float AttackTime = 0.0f; 			- Is used in Controller Statemachine 
+float AttackPauseTime = 0.0f; 			- In Pause state: ActualCharacter->AttackPauseTime = (ActualCharacter->AttackPauseTime + DeltaSeconds)
+float GetAttackedTime = 0.0f; 			- if (ActualCharacter->GetAttackedTime > EnemyIsAttackedTime) State is changing  // EnemyIsAttackedTime is in EnemyController
+class AWaypoint* NextWaypoint; 			- The Waypoint where the Character moves to
+void SetWaypoint(class AWaypoint* NewNextWaypoint); - With this Function you can set the Waypoint
+void SetAnimState(TEnumAsByte<AiStatus> NewCharAnimState);  - Set the Animation State
+TEnumAsByte<AiStatus> GetAnimState(); - Get the Animation State
+TEnumAsByte<AiStatus> CharAnimState; - This state is used in the Animation State Machine
 AActor* ActorToChase; // A Pointer to the Character (Mousebot) which the AI Chases
 float GetHealth(); // Get the Health of the Character
 void SetHealth(float NewHealth); // Set the Health of the Character
