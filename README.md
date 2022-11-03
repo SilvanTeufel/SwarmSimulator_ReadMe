@@ -98,19 +98,20 @@ Character Setup
 5. Go through all States and change the Animation.
 6. Check if the Transition Rules are Setup Correctly. If not you can easily choose the right state from a dropdown.
 7. Check Details of the Blueprint by Typing SwarmSimulator in the Search.
-8. Use Functions and Variables in EvenGraph and Construction Script.
+8. Use Functions and Variables in EvenGraph and Construction Script. Or just use the Parent Class as it is.
 
 GameMode/HUD/Actor Setup
 1. Create a Blueprint like mentioned above.
 2. Type "SwarmSimulator" in Search Details.
-3. Use Functions and Variables in EvenGraph and Construction Script.
+3. Use Functions and Variables in EvenGraph and Construction Script. Or just use the Parent Class as it is.
+
 
 Widget Setup
 1. Widgets have to be choosen inside the Blueprints of a Character
 2. Example Widgets are at (All\Engine\Plugins\SwarmSimulator\Content\SwarmSimulator\Blueprints\Widgets)
 3. Example Character with choosen Widgets can be found at (All\Engine\Plugins\SwarmSimulator\Content\SwarmSimulator\Blueprints\Character)
-4. Widget hast to been set Space "Screen" and Draw at Desired Size to true
-5. Widget Class has to choose a Blueprint
+4. Widget hast to been set Space "Screen" and Draw at Desired Size to true. (In the Widget and in the Character BP)
+5. Widget Class has to choose a Blueprint (in the Character BP). Or just use the Parent Class like it is.
 
 ### Class - MouseBotBase
 
@@ -118,24 +119,21 @@ Widget Setup
 
 AMouseBotBase();
 class UCapsuleComponent* TriggerCapsule;
-void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+void OnOverlapBegin(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult); // The Overlap is Triggering the Attack -> MouseBot attacks EnemyBase
+void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor, class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex); 
 virtual void BeginPlay() override;
 virtual void Tick(float DeltaTime) override;
 virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 void KillBot();
-void SetAnimState(TEnumAsByte<BotStatus> NewCharAnimState);
-TEnumAsByte<BotStatus> GetAnimState();
-TEnumAsByte<BotStatus> CharAnimState;
-FVector MoveToLocation;
-AEnemyBase* CurrentEnemy;
-bool AttackBottom = false;
-float AttackIterationTime = 0.f;
-float AttackDamage = 1.f;
-float DeathTime = 0.f;
-bool HealBottom = false;
-float HealIterationTime = 0.f;
-float HealPoints = 1.f;
+void SetAnimState(TEnumAsByte<BotStatus> NewCharAnimState); // Set the Animstate BotStatus (ENUM) of the Character
+TEnumAsByte<BotStatus> GetAnimState(); // Get the current AnimState
+TEnumAsByte<BotStatus> CharAnimState; // AnimState is saved here. Animation State Machine is using CharAnimState
+FVector MoveToLocation; // This is used to Navigate the Character while Animation State is Run
+AEnemyBase* CurrentEnemy; // This is the Pointer to the Enemy when the overlap started.
+bool AttackBottom = false; // This is used in the Statemachine while the Bot attacks it goes from Top to Bottom. (Depending on Box size of the Enemy)
+float AttackIterationTime = 0.f; // Is used in Statemachine
+float AttackDamage = 1.f; // This can be set to another Value, its the Damage which a Bot is doing when attacking once.
+float DeathTime = 0.f; // This Time is used in Statemachine
 ```
 
 
