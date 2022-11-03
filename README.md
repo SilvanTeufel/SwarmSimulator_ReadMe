@@ -36,9 +36,9 @@ Search for SwarmSimulator and put a check mark at it.
 
 ## Import Settings
 
-Document/Inputs/Gameplay_Debugger_Backup_2022-11-02_080527_SwarmSimulator.ini
-Document/Inputs/Input_Backup_2022-11-01_200303_SwarmSimulator.ini
-Document/Inputs/Maps_&_Modes_Backup_2022-11-02_074806_SwarmSimulator.ini
+SwarmSimulator/Document/Inputs/Gameplay_Debugger_Backup_2022-11-02_080527_SwarmSimulator.ini
+SwarmSimulator/Document/Inputs/Input_Backup_2022-11-01_200303_SwarmSimulator.ini
+SwarmSimulator/Document/Inputs/Maps_&_Modes_Backup_2022-11-02_074806_SwarmSimulator.ini
 
 __You can download Gameplay_Debugger_Backup_2022-11-02_080527_SwarmSimulator.ini and Input_Backup_2022-11-01_200303_SwarmSimulator.ini and Maps_&_Modes_Backup_2022-11-02_074806_SwarmSimulator.ini from here from github by clicking on top left Code->Download Zip__
 
