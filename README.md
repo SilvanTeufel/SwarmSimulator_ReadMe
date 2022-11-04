@@ -100,6 +100,12 @@ Character Setup
 7. Check Details of the Blueprint by Typing SwarmSimulator in the Search.
 8. Use Functions and Variables in EvenGraph and Construction Script. Or just use the Parent Class as it is.
 
+Character Animation Statemachine
+1. Right Click Create Animation -> Animation Blueprint
+2. Choose Parent Class of the CharacterBase -> CharacterBaseAnimInstance / EnemyBase -> EnemyBaseAnimInstance / MouseBotBase -> MouseBotBaseAnimInstance
+3 Choose Skeleton
+4. Copy Statemachine from (All\Engine\Plugins\SwarmSimulator\Content\SwarmSimulator\Blueprints\Animations)
+
 GameMode/HUD/Actor Setup
 1. Create a Blueprint like mentioned above.
 2. Type "SwarmSimulator" in Search Details.
