@@ -87,7 +87,7 @@ Here is a List of the Classes and there Functions:
 ## Create a Blueprint from Parent Classes
 
 1. Right Click inside the Content Browser inside the Unreal Editor -> Create Blueprint
-2. Go to "ALL CLASSES" Section and tipe the Name of the Class inside the Search
+2. Go to "ALL CLASSES" Section and tipe the Name of the Parent Class inside the Search
 3. Click on Select
 
 Character Setup
