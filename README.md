@@ -19,7 +19,7 @@ Or you just overwrite the Tick, if you use my Parent Classes.
 
 ## Download the Plugin
 
-!!! LINK HERE SOON !!!
+https://www.unrealengine.com/marketplace/en-US/product/27af35e123244b6199056b308fa9a43f
 
 If you have downloaded the plugin it can be found in your Unreal Engine folder:
 C:\Program Files\Epic Games\UE_5.0\Engine\Plugins\SwarmSimulator (for example).
